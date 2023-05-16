@@ -44,25 +44,26 @@ char *pa, *pb, temp, i;
   char a[SIZE] ;
   cout<<"Input string:";
   cin>>a;
+  int len=strlen(a);
   pa = &a[0];
   cout<< "Original: ";
-  for (i = 0; i < SIZE - 1; i++,pa++)
-   cout<<setw(3)<<*pa<<"" ;//<<endl;
+  for (i = 0; i < len - 1; i++,pa++)
+   cout<<setw(3)<<*pa<<" " ;//<<endl;
   //cout<<pa<<endl
-cout<<*pa<<endl;
+cout<<setw(3)<<*pa<<endl;
   
-  pa = &a[0]; pb = &a[SIZE - 1];
-cout<<"Reverse: ";
-for (i = 0; i < SIZE / 2; i++) {
+  pa = &a[0]; pb = &a[len - 1];
+cout<<"Reverse : ";
+for (i = 0; i < len / 2; i++) {
     temp = *pa;
     *pa = *pb;
     *pb = temp;
     pa++; pb--;
 }
 pa = &a[0];
-for (i = 0; i < SIZE - 1; i++,pa++)
-cout<<*pa<<" ";
+for (i = 0; i < len - 1; i++,pa++)
+cout<<setw(3)<<*pa<<" ";
   
-cout<<*pa<<endl;
+cout<<setw(3)<<*pa<<endl;
 return 0;
 }
